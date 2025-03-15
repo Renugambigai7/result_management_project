@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login Page</title>
+    <link rel="stylesheet" href="../static/login_register_page/css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        
+        <form action="/register_form_submission" method="POST">
+            {% csrf_token %}
+          
+            <div class="input-group">
+                <lable for="username">username</lable>
+                <input type="text" id="username" name="username" placeholder="username" required>
+            </div>
+            <div class="input-group">
+                <label for="student ID">student ID</label>
+                <input type="text" id="student ID" name="student ID" placeholder="Enter student ID" required
+                minlength="10" maxlength="15" pattern="[A-Za-z0-9]{10,15}"
+                title="Student ID must be 10 to 15 characters long and contain only letters and numbers">
+         <p class="error-message" id="id-error"></p> <!-- Error message for ID -->
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <p class="error-message" id="password-error"></p> <!-- Error message for password -->
+    
+               
+               
+    
+            <button type="submit">Register</button>
+            
+            <p class="register-link">Already have an account? <a href="/login">login</a></p>
+        </form>
+    </div>
+</body>
+</html>
